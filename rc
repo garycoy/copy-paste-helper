@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SCREEN_SESS=162315
+
+MY_COMMAND=$1
+
+echo "COMMAND:${MY_COMMAND}" > ./commands.txt
+echo "RETURN:YES" >> ./commands.txt
+
+./cp_helper.py ${SCREEN_SESS}
