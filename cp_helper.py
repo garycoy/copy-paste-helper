@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 
+# Reference: https://github.com/garycoy/copy-paste-helper/tree/main
+
 import subprocess
 import sys
 
+# First and only argument to cp_helper.py is the id of target GNU screen session
+# This MUST be correct, and must be present
 screen_sess = sys.argv[1]
 
 commands = open("./commands.txt").read().splitlines()
