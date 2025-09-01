@@ -74,6 +74,7 @@ or
 RETURN:YES
 
 RETURN:ASK => ask the user if return/enter should be sent to GNU screen.
+
 RETURN:YES => automatically hit the return/enter key after injecting the command
 
 Example commands.txt:
@@ -93,7 +94,7 @@ The above example will inject 'pwd' onto the GNU screen command line, then promp
 Navigate to the directory where cp_helper.py resides. Build your commands.txt file (see section above).
 
 ### Build commands.txt
-Some handy 'helper's for quickly building your commands.txt are below. Start off with just a text file of the commands you wish to run.
+Some handy 'helpers' for quickly building your commands.txt are below. Start off with just a text file of the commands you wish to run.
 
 Now, vi the file, and replace the beginning of each line with "COMMAND:":
 
@@ -103,9 +104,10 @@ Now, vi the file, and replace the beginning of each line with "COMMAND:":
 ```
 Save the file.
 
-Perform the following awk command to add "RETURN:ASK" after each command line. Ask will be the 'default'. Any time you want to automatically hit return, replace ASK with YES. in your commands.txt file.
+Perform the following awk command to add "RETURN:ASK" after each command line. Ask will be the 'default'. Any time you want to automatically hit return, replace ASK with YES in your commands.txt file.
 ```
- awk '1;!(NR%1){print "RETURN:ASK";}' commands.txt > commands2.txt
+awk '1;!(NR%1){print "RETURN:ASK";}' commands.txt > commands2.txt
+mv commands2.txt commands.txt
 ```
 ### Executing cp_helper.py
 
