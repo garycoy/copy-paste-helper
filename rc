@@ -1,10 +1,11 @@
 #!/bin/bash
 
-SCREEN_SESS=162315
+SCREEN_SESS=$1
 
-MY_COMMAND=$1
+MY_COMMAND=$2
 
-echo "COMMAND:${MY_COMMAND}" > ./commands.txt
-echo "RETURN:YES" >> ./commands.txt
+rm -f ./rc_commands.txt
+echo "COMMAND:${MY_COMMAND}" > ./rc_commands.txt
+echo "RETURN:YES" >> ./rc_commands.txt
 
-./cp_helper.py ${SCREEN_SESS}
+./cp_helper.py ${SCREEN_SESS} "rc_commands.txt"
